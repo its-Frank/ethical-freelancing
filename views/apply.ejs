@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply- Ethical Freelance Writing Marketplace and Training Hub</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="/images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <section>
+        <h1>Complete your Application</h1>
+        <div>
+          <p>Title: <%= locals.project.title %></p>
+          <p>Description: <%= locals.project.description %></p>
+          <p>
+            Deadline <%= new Date(locals.project.deadline).toLocaleDateString()
+            %>
+          </p>
+          <p>
+            Project Rate: KSH.
+            <span id="rate"><%= locals.project.price_ksh_hour %></span>
+          </p>
+        </div>
+        <form action="/apply/<%=locals.project.id%>" method="post">
+          <input type="hidden" name="projectId" value="<%=locals.project.id%>" />
+          <br />
+          <div>
+            <label for="payment">Select Payment Method</label>
+            <select name="paymentMethod" id="payment">
+              <option value="wallet">CCP Digital Wallet</option>
+              <option value="mpesa">Mpesa</option>
+              <option value="cash">Cash</option>
+            </select>
+          </div>
+          
+          <div>
+            <div>
+              <label for="message">Application Text</label>
+             <textarea name="applicationText" id="applicationText" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" value="Complete Application" />
+          </div>
+        </form>
+      </section>
+    </main>
+   
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

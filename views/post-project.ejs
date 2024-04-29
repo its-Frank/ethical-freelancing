@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer Results</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="/images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <% if (projects && projects.length > 0) { %>
+      <main class="container">
+        <h2>Projects</h2>
+        <ul class="project-list">
+          <% for (const project of projects) { %>
+          <li>
+            <h3>
+              <a href="/apply/<%= project.id %>"><%= project.title %></a>
+            </h3>
+            <p><%= project.description.substring(0, 100) %>...</p>
+            <p>Deadline: <%= new Date(project.deadline).toLocaleString() %></p>
+            <p>Rate per Hour: <%= project.price_ksh_hour %> KSH/hour</p>
+            <p>
+              Status: <% if (project.status === "pending") { %>
+              <a href="/apply/<%= project.id %>">Apply</a> (Only for Pending
+              Projects) <% } else { %> <%= project.status %> <% } %>
+            </p>
+          </li>
+          <% } %>
+        </ul>
+        <% } else { %>
+        <p>No projects found.</p>
+      </main>
+      <% } %> 
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

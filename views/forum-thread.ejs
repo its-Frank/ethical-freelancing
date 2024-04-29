@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer Results</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="/images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <% if (typeof req.session.message !== 'undefined') { %>
+        <div class="alert alert-success">
+          <%= req.session.message %>
+        </div>
+      <% } %>
+      <h1>Forum Threads</h1>
+      <% if (threads.length === 0) { %>
+        <p>No forum threads yet. Be the first to create one!</p>
+      <% } else { %>
+        <ul class="list-group">
+          <% for (const thread of threads) { %>
+            <li class="list-group-item">
+              <a href="/thread/<%= thread.id %>">
+                <h4><%= thread.title %></h4>
+                <p><%= thread.content.substring(0, 100) %>...</p>
+                <small>By: User <%= thread.user_id %></small>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+      <% } %>
+      <h2>Create New Thread</h2>
+      <% if (typeof req.body !== 'undefined') { %>
+        <div class="alert alert-danger">
+          Please fill in all required fields.
+        </div>
+      <% } %>
+      <form action="/forum" method="POST">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label for="content">Content:</label>
+          <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Thread</button>
+      </form>   
+    <%- include('_footer.ejs') %>
+  </body>
+</html>
+

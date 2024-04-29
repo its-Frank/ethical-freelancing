@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users</title>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+  </head>
+  <body>
+    <h1>Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Bio</th>
+          <th>Portfolio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.role %></td>
+          <td><%= user.writer_profiles ? user.writer_profiles.bio : '' %></td>
+          <
+          <td>
+            <%= user.writer_profiles ? user.writer_profiles.portfolio_url : ''
+            %>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <a href="/">Go back to home</a>
+  </body>
+</html>

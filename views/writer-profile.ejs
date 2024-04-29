@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Writer Profile - Ethical Freelance Writing Marketplace and Training Hub
+    </title>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <h1><%= writer.name %>'s Profile</h1>
+    <div class="profile-info">
+      <p>Specialization: <%= writer.specialization %></p>
+      <p>Experience Level: <%= writer.experience_level %></p>
+      <p>Hourly Rate: $<%= writer.hourly_rate %></p>
+      <p>Bio:</p>
+      <p><%= writer.bio %></p>
+      <% if (writer.portfolio_url) { %>
+      <p>
+        Portfolio URL:
+        <a href="<%= writer.portfolio_url %>"><%= writer.portfolio_url %></a>
+      </p>
+      <% } %> <% if (writer.past_projects && writer.past_projects.length > 0) {
+      %>
+      <h2>Past Projects</h2>
+      <ul>
+        <% for (const project of writer.past_projects) { %>
+        <li><%= project.title %></li>
+        <% } %>
+      </ul>
+      <% } %> <% if (writer.client_reviews && writer.client_reviews.length > 0)
+      { %>
+      <h2>Client Reviews</h2>
+      <ul>
+        <% for (const review of writer.client_reviews) { %>
+        <li>
+          <p>
+            <strong><%= review.client_name %></strong>: <%= review.review_text
+            %>
+          </p>
+        </li>
+        <% } %>
+      </ul>
+      <% } %>
+    </div>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

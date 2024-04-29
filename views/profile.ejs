@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Profile- Ethical Freelance Writing Marketplace and Training Hub
+    </title>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <section>
+        <h1>Profile</h1>
+        <br />
+        <h2>Personal Information</h2>
+        <h3><%= locals.user.username %></h3>
+        <h3><%= locals.user.email %></h3>
+        <h3><%= locals.user.role %></h3>
+      </section>
+      
+      <section>
+        <h2>Active project</h2>
+        <% const activeProjects = locals.projects.filter(project=>project.status == 'completed') %>
+        <% if(activeProjects.length == 0){ %>
+            <p>You currently not been assigned a project!</p>
+       <% }else{ %>
+            <%  activeProjects.forEach(project=>{ %>
+                    <h4> projectId  <%= project.title %> </h4>
+                    <% let currentTime = new Date() %>
+                    <% let checkInTime = new Date(project.deadline)  %> 
+                    <% let timeDiff = currentTime.getTime() - checkInTime.getTime() %>
+                    <%  const hoursPassed = Math.ceil(timeDiff / (1000 * 60 * 60)) %>
+                    <% if(hoursPassed == 1){ %>
+                        <p> Working hours: 1 hour </p>
+                    <%}else{%>
+                        <p> Working hours: <%=hoursPassed%> hours </p>
+                    <%}%>
+                    <a href="/checkout?project=<%=project.title%>" style="background-color: blueviolet; color: white;" >Check Out</a>
+            <%})%>
+       <%}%>
+    </section>
+    <section>
+        <h2>Working History</h2>
+        <% const oldProjects = locals.projects.filter(project=>project.status == 'pending') %>
+        <% if(oldProjects.length == 0){ %>
+            <p>You have not done any project before!</p>
+        <%}else{%>
+            <% oldProjects.forEach(project=>{ %>
+                <h4> projectId  <%= project.title %> </h4>
+                <p> Date: <%= new Date(project.deadline).toLocaleDateString()  %> </p>
+            <% }) %>
+
+        <%}%> 
+    </section>
+    </main>
+
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

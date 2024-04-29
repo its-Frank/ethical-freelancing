@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer Results</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="/images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <h1>Edit Writer Profile</h1>
+<form action="/update-writer-profile" method="POST">
+      <div class="form-group">
+        <label for="bio">Bio:</label>
+        <textarea class="form-control" id="bio" name="bio"><%= profileData.bio %></textarea>
+      </div>
+      <div class="form-group">
+        <label for="experience_level">Experience Level:</label>
+        <input type="text" class="form-control" id="experience_level" name="experience_level" value="<%= profileData.experience_level %>">
+      </div>
+      <div class="form-group">
+        <label for="specialization">Specialization:</label>
+        <input type="text" class="form-control" id="specialization" name="specialization" value="<%= profileData.specialization %>">
+      </div>
+      <div class="form-group">
+        <label for="portfolio_url">Portfolio URL:</label>
+        <input type="url" class="form-control" id="portfolio_url" name="portfolio_url" value="<%= profileData.portfolio_url %>">
+      </div>
+      <div class="form-group">
+        <label for="hourly_rate">Rate:</label>
+        <input type="number" class="form-control" id="hourly_rate" name="hourly_rate" value="<%= profileData.hourly_rate %>">
+      </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    </form>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

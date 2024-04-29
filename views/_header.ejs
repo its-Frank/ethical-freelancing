@@ -1,0 +1,40 @@
+<header>
+  <div class="logo-container">
+    <div>
+      <img src="/images/logo1.png" alt="logo" />
+    </div>
+    <div>
+      <img src="/images/logo2.png" alt="freelancer" />
+    </div>
+  </div>
+  <nav id="main-nav">
+    <a href="/">Home</a>
+    <!-- <a href="/users">Users</a> -->
+    <a href="/writers">Writers</a>
+    <a href="/buyers">Buyers</a>
+    <a href="/projects">Projects</a>
+    <a href="/messages">Messages</a>
+    <a href="/forum">Forum</a>
+  </nav>
+  <nav>
+    <% if(locals.user){%>
+    <a href="/profile"> <%= locals.user.username.split(" ")[0] %> </a>
+    <a href="/logout">Logout</a>
+    <% } else{%>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <%}%>
+  </nav>
+  <button id="menu-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+  </button>
+</header>
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mainNav = document.getElementById("main-nav");
+  if (menuBtn) {
+    menuBtn.addEventListener("click", () => {
+      mainNav.classList.toggle("open");
+    });
+  }
+</script>

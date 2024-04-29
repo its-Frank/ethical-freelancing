@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writer Results</title>
+    <link rel="stylesheet" href="/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="/images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    
+    <%- include('_header.ejs') %>
+    <main class="writer-results">
+    <% if(locals.writers.length>0){ %> 
+        <% locals.writers.forEach(writer=>{ %>
+        <h2><%=writer.username %></h2>
+        <h3> <%= writer.email %> </h3>
+        <h3><%= writer.bio%></h3>
+        <h3><%= writer.hourly_rate%></h3>
+        <h3><%= writer.available%></h3>
+        <a href="<%=writer.portfolio_url%>" target="_blank"> Check Portfolio </a>
+        <%})%> 
+    <%}else{%>
+        <h2>No writers Found</h2>
+    <%}%>
+  </main>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

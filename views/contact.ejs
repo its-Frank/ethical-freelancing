@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Contact- Ethical Freelance Writing Marketplace and Training Hub
+    </title>
+    <link rel="stylesheet" href="stylesheets/contact.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <h1>Ethical Freelancing: Connect with Us!</h1>
+      <p>
+        We'd love to hear from you! Whether you're a writer seeking a platform
+        to showcase your ethical writing skills, a buyer looking for a reliable
+        ethical freelancer, or simply have a question about our marketplace,
+        we're here to help.
+      </p>
+      <div class="contact-info">
+        <h2>Here are a few ways to get in touch:</h2>
+        <p>
+          **Email:** [your email address] (Feel free to personalize it, e.g.,
+          connect@ethicalfreelancing.com)
+        </p>
+      </div>
+      <div class="contact-form">
+        <h2>Let's build a community of ethical writing and collaboration!</h2>
+        <form action="#">
+          <label for="subject">Subject Line:</label>
+          <select name="subject" id="subject">
+            <option value="writers">
+              Help us craft clear and ethical content (For writers)
+            </option>
+            <option value="clients">
+              Find the perfect ethical freelancer (For buyers)
+            </option>
+            <option value="general">
+              Question about the Ethical Freelancing Marketplace (For general
+              inquiries)
+            </option>
+          </select>
+          <label for="message">Message:</label>
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Feel free to share any relevant details in your message..."
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </main>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forum- Ethical Freelance Writing Marketplace and Training Hub</title>
+    <link rel="stylesheet" href="stylesheets/forum.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <section id="forum-categories">
+        <h2>Forum Categories</h2>
+        <ul>
+          <li><a href="/writing-editing">Writing & Editing</a></li>
+          <li><a href="/web-design">Web Design & Development</a></li>
+          <li><a href="/marketing-media">Marketing & Social Media</a></li>
+          <li><a href="/graphic-videoediting">Graphic Design & Video Editing</a></li>
+          <li><a href="/other-freelancingservices">Other Freelancing Services</a></li>
+        </ul>
+      </section>
+      <section id="latest-discussions">
+        <h2>Latest Discussions</h2>
+        <ul>
+          <li><a href="/high-paying-jobs">How to Find High-Paying Freelancing Clients</a></li>
+          <li>
+            <a href="/freelancing-tips">Tips for Creating a Winning Freelancer Profile</a>
+          </li>
+          <li><a href="/freelancing-tools">The Best Tools for Freelancers</a></li>
+        </ul>
+      </section>
+      <section id="create-post">
+        <h2>Create a New Post</h2>
+        <form action="/forum" method="post">
+          <label for="category">Category:</label>
+          <select name="category" id="category">
+            <option value="">Select Category</option>
+            <option value="writing">Writing & Editing</option>
+            <option value="webdesign">Web Design & Development</option>
+          </select>
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Enter your post title"
+          />
+          <label for="content">Content:</label>
+          <textarea
+            name="content"
+            id="content"
+            rows="10"
+            placeholder="Write your post content here"
+          ></textarea>
+          <button type="submit">Create Post</button>
+        </form>
+      </section>
+    </main>
+
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

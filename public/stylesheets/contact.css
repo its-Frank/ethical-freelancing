@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  text-decoration: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+body {
+  line-height: 1.5;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #d0ecd2;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /* border-bottom: 1px solid #ccc; */
+  background-color: white;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-container img {
+  margin-right: 1rem;
+  height: 3rem;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: #45a049;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+nav a:hover {
+  background-color: #ccc;
+}
+main {
+  padding: 20px;
+}
+h1,
+h2,
+h3 {
+  color: #4caf50;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+.contact-form label {
+  margin-bottom: 5px;
+  display: block;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.contact-form textarea {
+  height: 150px;
+}
+.contact-form button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background-color: green;
+}
+.contact-info {
+  margin-top: 30px;
+  text-align: center;
+}
+.contact-info h2 {
+  margin-bottom: 10px;
+}
+#main-nav {
+  display: block;
+  position: static;
+  width: unset;
+  height: unset;
+  background-color: transparent;
+}
+#menu-btn {
+  display: none;
+}
+@media (max-width: 767px) {
+  header ion-icon {
+    font-size: 45px;
+  }
+  #main-nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #fff;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  #main-nav.open {
+    right: 0;
+  }
+  #menu-btn {
+    display: block;
+  }
+}
+
+footer {
+  background-color: rgb(96, 123, 96);
+  color: white;
+}
+footer .links a {
+  color: #4caf50;
+  display: block;
+  margin: 12px 0;
+}
+footer .socials {
+  width: fit-content;
+  margin: 10px auto;
+}
+.footer-flex {
+  padding: 15px;
+}

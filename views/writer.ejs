@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Writer- Ethical Freelance Writing Marketplace and Training Hub
+    </title>
+    <link rel="stylesheet" href="/stylesheets/buyer.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <h1>Writer Dashboard</h1>
+
+    <h2>Edit Profile</h2>
+    <form action="/writers" method="POST">
+      <div class="form-group">
+        <label for="bio">Bio:</label>
+        <textarea id="bio" name="bio" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="experience_level">Experience Level:</label>
+        <select id="experience_level" name="experience_level">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="specialization">Specialization:</label>
+        <input type="text" id="specialization" name="specialization" required />
+      </div>
+      <div class="form-group">
+        <label for="portfolio_url">Portfolio URL:</label>
+        <input type="url" id="portfolio_url" name="portfolio_url" required />
+      </div>
+      <div class="form-group">
+        <label for="hourly_rate">Rate:</label>
+        <input type="number" id="hourly_rate" name="hourly_rate" required />
+      </div>
+      <div class="form-group">
+        <label for="available">Available:</label>
+        <input type="checkbox" id="available" name="available" value="true" />
+        Available Now
+      </div>
+      <button type="submit">Update Profile</button>
+    </form>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

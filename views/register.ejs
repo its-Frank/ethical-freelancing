@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Register - Ethical Freelance Writing Marketplace and Training Hub
+    </title>
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %>
+    <main>
+      <section>
+        <h1>Sign Up</h1>
+        <% if(locals.error){ %>
+        <p style="color: orangered"><%=locals.errMessage%></p>
+        <form action="/register" method="post">
+          <div>
+            <label for="username">UserName</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              value="<%=locals.prevInput.username%>"
+            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value="<%=locals.prevInput.email%>"
+            />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value="<%=locals.prevInput.password%>"
+            />
+          </div>
+          <div>
+            <label for="confirm_pass">Confirm Password</label>
+            <input
+              type="password"
+              name="confirm_pass"
+              id="confirm_pass"
+              value="<%=locals.prevInput.confirm_pass%>"
+            />
+          </div>
+          <div>
+            <label for="role">Role</label>
+            <select name="role" id="role">
+              <option value="buyer">Buyer</option>
+              <option value="writer">Writer</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+        <%}else{%>
+        <form action="/register" method="post">
+          <div>
+            <label for="username">UserName</label>
+            <input type="text" name="username" id="username" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+          <div>
+            <label for="confirm_pass">Confirm Password</label>
+            <input type="password" name="confirm_pass" id="confirm_pass" />
+          </div>
+          <div>
+            <label for="role">Role</label>
+            <select name="role" id="role">
+              <option value="buyer">Buyer</option>
+              <option value="writer">Writer</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" value="Sign Up" />
+          </div>
+        </form>
+        <%}%>
+      </section>
+    </main>
+    <%- include('_footer.ejs') %>
+  </body>
+</html>

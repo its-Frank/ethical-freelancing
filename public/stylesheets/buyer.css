@@ -1,0 +1,172 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+body {
+  background-color: #d0ecd2;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-container img {
+  margin-right: 1rem;
+  height: 3rem;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: #45a049;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+nav a:hover {
+  background-color: #ccc;
+}
+#main-nav {
+  display: block;
+  position: static;
+  width: unset;
+  height: unset;
+  background-color: transparent;
+}
+#menu-btn {
+  display: none;
+}
+
+/* end */
+/* start */
+@media (max-width: 767px) {
+  header ion-icon {
+    font-size: 45px;
+  }
+  #main-nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #fff;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  #main-nav.open {
+    right: 0;
+  }
+  #menu-btn {
+    display: block;
+  }
+}
+main {
+  padding: 1rem;
+}
+
+h1,
+h2 {
+  margin-bottom: 1rem;
+  color: #448847;
+}
+
+.search-field {
+  margin-bottom: 0.5rem;
+}
+
+.search-field label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.writer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.writer-list li {
+  margin-bottom: 1rem;
+}
+
+.writer-list li a {
+  color: black;
+  text-decoration: none;
+}
+
+.writer-list li a:hover {
+  text-decoration: underline;
+}
+.secure-messaging {
+  margin-top: 2rem; /* Add some space above the messaging section */
+}
+.message-form {
+  margin-bottom: 1rem;
+}
+.message-form label {
+  display: block;
+  margin-bottom: 0.2rem;
+}
+#message-input {
+  height: 100px; /* Adjust message input height as needed */
+}
+footer {
+  background-color: rgb(37, 49, 37);
+  color: white;
+}
+footer .links a {
+  display: block;
+  margin: 12px 0;
+  color: #45a049;
+}
+footer .socials {
+  width: fit-content;
+  margin: 10px auto;
+}
+.footer-flex {
+  padding: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  width: 50%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background-color: #45a049;
+}

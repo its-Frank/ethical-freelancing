@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="stylesheets/project.css" />
+  </head>
+  <body>
+    <%- include('_header.ejs') %> <% if (projects && projects.length > 0) { %>
+    <main class="container">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <% for (const project of projects) { %>
+        <li>
+          <h3>
+            <a href="/apply/<%= project.id %>"><%= project.title %></a>
+          </h3>
+          <p><%= project.description.substring(0, 150) %>...</p>
+          <p>Deadline: <%= new Date(project.deadline).toLocaleString() %></p>
+          <p>Project Rate : <%= project.price_ksh_hour %> KSH/hour</p>
+          <p>
+            Status: <% if (project.status === "pending") { %>
+            <a href="/apply/<%= project.id %>" style="background-color: green; color: white;">Apply</a> (Only for Pending
+            Projects) <% } else { %> <a href="#" style="background-color: gray; color: #ccc; pointer-events: none;">Apply (Disabled)</a> %> <% } %>
+          </p>
+        </li>
+        <% } %>
+      </ul>
+      <% } else { %>
+      <p>No projects found.</p>
+    </main>
+    <% } %> <%- include('_footer.ejs') %>
+  </body>
+</html>

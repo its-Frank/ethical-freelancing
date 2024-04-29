@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a,
+input,
+textarea,
+select,
+button {
+  font: inherit;
+  text-decoration: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+body {
+  line-height: 1.5;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #d0ecd2;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  /* border-bottom: 1px solid #ccc; */
+  background-color: white;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo-container img {
+  margin-right: 1rem;
+  height: 3rem;
+}
+nav {
+  display: flex;
+  gap: 1rem;
+}
+nav a {
+  text-decoration: none;
+  color: #45a049;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+nav a:hover {
+  background-color: #ccc;
+}
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+h1,
+h2,
+h3 {
+  font-family: serif;
+  margin-bottom: 1em;
+}
+p,
+ul,
+li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+a {
+  color: #4caf50;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+li {
+  margin-bottom: 5px;
+}
+#forum-categories,
+#latest-discussions {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#forum-categories h2,
+#latest-discussions h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#forum-categories ul,
+#latest-discussions ul {
+  list-style-type: none;
+}
+#forum-categories li,
+#latest-discussions li {
+  margin-bottom: 10px;
+}
+#forum-categories a,
+#latest-discussions a {
+  display: block;
+  padding: 5px;
+}
+#forum-categories a:hover,
+#latest-discussions a:hover {
+  background-color: #f4f4f4;
+}
+#create-post {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+#create-post h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+#create-post label {
+  display: block;
+  margin-bottom: 5px;
+}
+#create-post select,
+#create-post input,
+#create-post textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#create-post button {
+  background-color: green;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#create-post button:hover {
+  background-color: grey;
+}
+
+#main-nav {
+  display: block;
+  position: static;
+  width: unset;
+  height: unset;
+  background-color: transparent;
+}
+#menu-btn {
+  display: none;
+}
+@media (max-width: 767px) {
+  header ion-icon {
+    font-size: 45px;
+  }
+  #main-nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #fff;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  #main-nav.open {
+    right: 0;
+  }
+  #menu-btn {
+    display: block;
+  }
+}
+
+footer {
+  background-color: rgb(96, 123, 96);
+  color: white;
+}
+footer .links a {
+  color: #4caf50;
+  display: block;
+  margin: 12px 0;
+}
+footer .socials {
+  width: fit-content;
+  margin: 10px auto;
+}
+.footer-flex {
+  padding: 15px;
+}
+
+#main-nav {
+  display: block;
+  position: static;
+  width: unset;
+  height: unset;
+  background-color: transparent;
+}
+#menu-btn {
+  display: none;
+}
+@media (max-width: 767px) {
+  header ion-icon {
+    font-size: 45px;
+  }
+  #main-nav {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #fff;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  #main-nav.open {
+    right: 0;
+  }
+  #menu-btn {
+    display: block;
+  }
+}
+
+footer {
+  background-color: rgb(96, 123, 96);
+  color: white;
+}
+footer .links a {
+  color: #4caf50;
+  display: block;
+  margin: 12px 0;
+}
+footer .socials {
+  width: fit-content;
+  margin: 10px auto;
+}
+.footer-flex {
+  padding: 15px;
+}
